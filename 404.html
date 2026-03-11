@@ -23,5 +23,16 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Redirect to hash-based route if not already using it (for GitHub Pages)
+      if (
+        location.pathname.startsWith('/Powerpointprojekplan') &&
+        !location.hash &&
+        location.pathname !== '/Powerpointprojekplan/404.html'
+      ) {
+        const rest = location.pathname.replace('/Powerpointprojekplan', '');
+        location.replace(`/Powerpointprojekplan/#${rest}${location.search}${location.hash}`);
+      }
+    </script>
   </body>
 </html>
